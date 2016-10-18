@@ -77,7 +77,7 @@ $(document).ready(function(){
 			this.hue = infiniteCount + this.id;
 			this.color = "hsl("+this.hue+",100%,50%)";
 			ctx.fillStyle = this.color;
-			ctx.fillRect(this.x, this.y-0.5, 1 , 1);
+			ctx.fillRect(this.x, this.y, 1 , 1);
 		}
 	}
   
