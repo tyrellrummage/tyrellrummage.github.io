@@ -4,12 +4,48 @@
 	<title>Walker</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 	<script src="js/main.js"></script>
 </head>
 <body>
 
 <canvas></canvas>
+
+<div class="gui">
+	<p class="title">Canvas Walkers</p>
+
+	<div class="commands">
+		<p>Command List:</p>
+
+		<ul>
+			<li><span class="letter">W</span> goes up</li>
+			<li><span class="letter">A</span> goes left</li>
+			<li><span class="letter">S</span> goes down</li>
+			<li><span class="letter">D</span> goes right</li>
+		</ul>
+
+		<span class="mb">Write the seed in the field below, you can only use those 4 letters.</span>
+		<span>The amount of walkers must be less than 100</span>
+	</div>
+
+	<p class="input-title">Seed</p>
+	<input type="text" class="i-seed">
+
+	<div class="col-1">
+		<p class="input-title">Number of walkers</p>
+		<input type="text" class="i-amount">
+	</div>
+
+	<div class="col-2">
+		<p class="input-title">Walker speed (in ms)</p>
+		<input type="text" class="i-speed">
+	</div>
+
+	<button>START</button>
+
+
+</div>
 
 </body>
 </html>

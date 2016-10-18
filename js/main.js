@@ -1,7 +1,5 @@
 $(document).ready(function(){
 
-	var seed = prompt("Type your seed(a goes right, b goes bottom, c goes up, d goes left): ", "");
-
 	var canvas = $('canvas')[0];
 	var ctx = canvas.getContext('2d');
 
@@ -13,17 +11,40 @@ $(document).ready(function(){
 
 	ctx.fillStyle = "black";
 	ctx.fillRect(0, 0, width, height);
-	
-	var loopSpeed = 16;
-	var walkerAmount = 50;
+
+	var seed,
+		walkerSpeed,
+		walkerAmount,
+		walkerSeparation = 10,
+		walkerSeedLenght;
+
+	$('button').on('click', function(){
+
+		seed = $('.i-seed').val();
+		walkerSpeed = parseInt($('.i-speed').val()) || 1000/60;
+		walkerAmount = parseInt($('.i-amount').val()) || 50;
+
+		var walkerOffset = (height - walkerAmount * walkerSeparation) / 2;
+
+		if(seed==""){
+			alert("You must input a seed");
+		}else if(walkerAmount>100){
+			alert("Walker amount must be less than 100");
+		}else{
+			for(var i = 0; i < walkerAmount; i++){
+				var walker = new Walker(seed, i*walkerSeparation + walkerOffset, i*5);
+				walkers.push(walker);
+			}
+
+			walkerSeedLenght = walker.seed.length;
+
+			walkerLoop();
+			$('.gui').fadeOut();
+		}
+	});
+
 	var walkers = [];
 
-	for(var i = 0; i < walkerAmount; i++){
-		var walker = new Walker(seed, i*10 + 100, i*5);
-		walkers.push(walker);
-	}
-
-	var walkerSeedLenght = walker.seed.length;
 	var count = 0;
 	var infiniteCount = 0;
 	
@@ -37,17 +58,13 @@ $(document).ready(function(){
 		}		
 		
 		if(count<=walkerSeedLenght){
-			setTimeout(walkerLoop, loopSpeed);
+			setTimeout(walkerLoop, walkerSpeed);
 		}else{
 			count = 0;
 			walkerLoop();
 		}
-
-		console.log(walkers);
 	}
-	
-	walkerLoop();
-	
+
 	function Walker(seed, y, id){
 		this.seed = seed;
 		this.id = id;
