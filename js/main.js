@@ -76,16 +76,16 @@ $(document).ready(function(){
 		this.move = function(){
 			var letter = this.seed[count-1];
 			switch(letter){
-				case "a":
+				case "d":
 					this.x++;
 					break;
-				case "b":
+				case "s":
 					this.y++;
 					break;
-				case "c":
+				case "w":
 					this.y--;
 					break;
-				case "d":
+				case "a":
 					this.x--;
 					break;
 				}
