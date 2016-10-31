@@ -278,7 +278,7 @@ $(document).ready(function(){
 			var string = JSON.stringify(createLevelArray) + "!!" + JSON.stringify(shuffleLevelArray);
 			var encodedString = Base64.encode(string);
 
-			$('.modal').html('<h2>This is your level</h2><h3>Level link (you can share this link):</h3><textarea>http://www.tyrellrummage.github.io/loop-game/index.php?game='+encodedString+'</textarea><h3>Level raw code</h3><textarea>'+encodedString+'</textarea>');
+			$('.modal').html('<h2>This is your level</h2><h3>Level link (you can share this link):</h3><textarea>http://www.tyrellrummage.github.io/loop-game/index.html?game='+encodedString+'</textarea><h3>Level raw code</h3><textarea>'+encodedString+'</textarea>');
 			$('.overlay').css('display', 'flex').hide().fadeIn(400);
 
 			$(this).attr('data-state', 'done');
