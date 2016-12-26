@@ -150,9 +150,9 @@ window.addEventListener('keydown', () => {
 //change steepness of the terrain if is too steep
 window.addEventListener('mousewheel', () => {
 	if(event.wheelDelta < 0){
-		steepnessOffset--;
+		steepnessOffset -= 0.2;
 	}else{
-		steepnessOffset++
+		steepnessOffset += 0.2;
 	}
 	genLandscape();
 });
