@@ -1,4 +1,4 @@
-var random = (...arguments) => {
+let random = (...arguments) => {
 
 	//if no arguments gen random between 0 and 1 with decimals
 	if(arguments.length === 0){
