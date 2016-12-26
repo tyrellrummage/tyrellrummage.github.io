@@ -12,7 +12,7 @@ let random = (...arguments) => {
 		//return the random generated number
 		return Math.floor(Math.random()*(maximum-minimum+1)+minimum);
 	}
-}
+};
 
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
