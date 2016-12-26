@@ -137,7 +137,9 @@ let drawPoints = (fillColor, offset = 0) => {
 
 //on click generate new landscape with the same colors
 window.addEventListener('click', () => {
-	genLandscape();
+	if(event.which !== 3){
+		genLandscape();
+	}	
 });
 
 //on rightclick generate new landscape with different colors
