@@ -4,7 +4,6 @@ var random = (...arguments) => {
 	if(arguments.length === 0){
 		return Math.random();
 	}else{
-
 		//if only 1 parameter, minimum is 0 and maximum is the first argument
 		//if 2 parameters, minimum is the first one and maximum the second one
 		let minimum = (arguments.length === 1) ? 0 : arguments[0];
