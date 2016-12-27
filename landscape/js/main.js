@@ -136,20 +136,20 @@ let drawPoints = (fillColor, offset = 0) => {
 }
 
 //on click generate new landscape with the same colors
-window.addEventListener('click', () => {
+window.addEventListener('click', (event) => {
 	if(event.which !== 3){
 		genLandscape();
 	}	
 });
 
 //on rightclick generate new landscape with different colors
-window.addEventListener('keydown', () => {
+window.addEventListener('keydown', (event) => {
 	if(event.which !== 116) genColorScheme();
 });
 
 
 //change steepness of the terrain if is too steep
-window.addEventListener('mousewheel', () => {
+window.addEventListener('mousewheel', (event) => {
 	if(event.wheelDelta < 0){
 		steepnessOffset -= 0.2;
 	}else{
