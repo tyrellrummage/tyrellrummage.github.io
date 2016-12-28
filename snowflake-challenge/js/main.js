@@ -55,6 +55,26 @@ let rotate = deg => ctx.rotate(deg * PI/180);
 let save = () => ctx.save();
 let restore = () => ctx.restore();
 
+let beginPath = () => ctx.beginPath();
+let closePath = () => ctx.closePath();
+
+let moveTo = (x, y) => ctx.moveTo(x, y);
+
+let lineTo = (x, y) => {
+	if(y === undefined){
+		for(var i = 0; i < x.length; i++){
+			var pair = x[i];
+
+			var x1 = pair[0];
+			var y1 = pair[1];
+
+			ctx.lineTo(x1, y1);
+		}
+	}else{
+		ctx.lineTo(x, y)
+	}	
+}
+
 let circle = (x, y, radius) => {
 	ctx.beginPath();
 	ctx.arc(x, y, radius, 0, 2 * PI);
@@ -97,28 +117,50 @@ class Vector {
 		this.y = y;
 	}
 
-	add(vector) {
+	add(vector, pass) {
 		this.x += vector.x;
 		this.y += vector.y;
+
+		if(pass) return this;
 	}
 
-	sub(vector) {
+	sub(vector, pass) {
 		this.x += vector.x;
 		this.y += vector.y;
+
+		if(pass) return this;
 	}
 
-	mult(vector) {
-		this.x *= vector.x;
-		this.y *= vector.y;
+	mult(vector, pass) {
+
+		if(typeof vector == 'object'){
+			this.x *= vector.x;
+			this.y *= vector.y;	
+		}else{
+			this.x *= vector;
+			this.y *= vector;
+		}		
+
+		if(pass) return this;
 	}
 
-	div(vector) {
+	div(vector, pass) {
 		this.x /= vector.x;
 		this.y /= vector.y;
+
+		if(pass) return this;
 	}
 
 	copy() {
 		return new Vector(this.x, this.y);
+	}
+
+	getMagnitude() {
+		return Math.sqrt(Math.pow(this.x, 2) + Math.pow(this.y, 2));
+	}
+
+	getAngle() {
+		return Math.atan2(this.y, this.x) * 180 / PI;
 	}
 }
 

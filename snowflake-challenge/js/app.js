@@ -23,7 +23,7 @@ class Snowflake {
 		//handle movement
 		switch(this.movement) {
 			case 'straight':
-				this.position.add(createVector(this.angle));
+				this.position.add(createVector(this.angle).mult(snowflakeGenSpeed, true));
 				break;		
 		}		
 	}
