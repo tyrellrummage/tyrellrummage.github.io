@@ -1,0 +1,131 @@
+/*
+ * Estilos base
+ */
+
+ @font-face{
+    font-family: 'Digital-7';
+    src: url(fonts/digital-7.ttf);
+ }
+
+*{
+	margin: 0;
+	padding: 0;
+    box-sizing: border-box;
+}
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.browser-upgrade {
+	margin: 0.2em 0;
+	background: #ccc;
+	color: #000;
+	padding: 0.2em 0;
+}
+
+.screen-readers-hide {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.wrapper{
+    width: 90%;
+    margin: 0 auto;
+    max-width: 960px;
+}
+
+body{
+    background: url(images/bg.jpg) no-repeat center center;
+    background-size: cover;
+}
+
+html, body{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.merit-count{
+    border: 2px solid #fff;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0,0,0,.8);
+}
+
+.character img{
+    width: 2rem;
+    height: 2rem;
+    border-radius: 3px;
+    margin: .125rem;
+}
+
+.merit-icon img{
+    width: 2rem;
+    height: 2rem;
+    margin-right: .125rem;
+}
+
+.merit-number{
+    font-family: 'Digital-7';
+    margin: 0 .5rem;
+    width: 11rem;
+    position: relative;
+    height: 2rem;
+}
+
+.merit-number-false{
+    color: rgba(255,255,255,.1);
+    letter-spacing: .125rem;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: right;
+    width: 11rem;
+}
+
+.merit-number-true{
+    color: #fff;
+    letter-spacing: .125rem;
+    font-size: 2rem;
+    font-weight: bold;
+    width: 11rem;
+    text-align: right;
+}
+
+.merit-number-false,
+.merit-number-true{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -1px);
+}
