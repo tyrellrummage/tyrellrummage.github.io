@@ -61,6 +61,10 @@ function finishGame(){
 		number: 0,
 		numberStep: comma_separator_number_step,
 		easing: 'easeInOutQuad'
-	}, 60000, 'linear');
+	}, 60000, 'linear', function(){
+		merits = -1;
+		renderMinus1();
+		canPlay = true;
+	});
 	$('.merit-number-true').text();
 }
