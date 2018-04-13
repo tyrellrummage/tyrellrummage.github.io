@@ -1,0 +1,17 @@
+*{margin: 0; padding: 0; box-sizing: border-box; }
+
+.wrapper{width: 90%; margin: 0 auto; max-width: 960px; }
+
+img{border-radius: 5px 5px 0 0; width: 100%; }
+h1{margin: 5rem 0 2rem; }
+h2{margin: .5rem 0 2rem; }
+p{line-height: 1.4; }
+
+.caption p{margin-bottom: 0; padding: 1.25rem; font-weight: bold; font-size: 1.5rem; color: yellow; text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000; }
+.caption{width: 100%; position: absolute; bottom: 0; left: 0; text-align: center; }
+
+.still{position: relative; margin-bottom: 3rem; }
+
+@media screen and (max-width: 48rem){
+    .caption p{font-size: 1rem; }
+}
